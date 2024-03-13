@@ -2,7 +2,7 @@ from tkinter import *
 
 window = Tk()
 window.title("BMI Calculator")
-window.minsize(width=300,height=300)
+window.minsize(width=350,height=300)
 font_1= ("Bold",20,"italic")
 font_2= ("Bold",20)
 font_3= ("bold",25)
@@ -29,27 +29,26 @@ def click_button():
     BMI = weight / ((Heigh/100)*(Heigh/100))
     if 0< BMI < 18.5:
         text= "Underweight" #230
-        x=230
+        He=230
     elif 18<= BMI <25:
         text= "Normal"  #169
-        x=169
+        He=169
     elif 25<= BMI <30:
         text= "Overweight"#216
-        x=216
+        He=216
     elif 30<= BMI:
         text= "Obese" #162
-        x=162
+        He=162
     elif BMI <= 0:
         text="entered the wrong number."
     calculated_BMI_label = Label(text=f"you are {text}",font=font_3)
     calculated_BMI_label.config(pady=10)
-    calculated_BMI_label.place
-    calculated_BMI_label.pack()
+    calculated_BMI_label.place(x= 175-He/2,y= 190)
     def how_much_pixel_2():
         calculated_BMI_label.update()
         print(calculated_BMI_label.winfo_width())
 calculate_button = Button(text="Calculate",command=click_button)
-calculate_button.place(x= 104,y= 150)
+calculate_button.place(x= 129,y= 150)
 
 def how_much_pixel():
     calculate_button.update()
