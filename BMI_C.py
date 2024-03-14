@@ -49,17 +49,7 @@ def click_button():
         calculated_ValueError.config(pady=10)
         calculated_ValueError.pack()
 
-
-
-
-
 calculate_button = Button(text="Calculate",command=click_button)
 calculate_button.pack()
-
-def how_much_pixel():
-    calculate_button.update()
-    x = calculate_button.winfo_height()
-    y = calculate_button.winfo_width()
-    print(y)
 
 window.mainloop()
