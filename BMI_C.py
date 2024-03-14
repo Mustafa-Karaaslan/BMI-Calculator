@@ -41,7 +41,7 @@ def click_button():
                 text= "Obese" #162
             elif BMI <= 0:
                 text="entered the wrong number."
-            calculated_BMI_label = Label(text=f"Your BMI is {BMI} you are {text}",font=font_3)
+            calculated_BMI_label = Label(text=f"Your BMI is {BMI} You are {text}",font=font_3)
             calculated_BMI_label.config(pady=10)
             calculated_BMI_label.pack()
     except ValueError:
