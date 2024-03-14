@@ -26,27 +26,34 @@ def click_button():
         try:
             Heigh = int(height_entry.get())
             weight = int(weight_entry.get())
-            BMI = weight / ((Heigh/100)*(Heigh/100))
-            BMI = int(BMI * 100) / 100
-            if 0< BMI < 18.5:
-                text= "Underweight" #230
-                He=230
-            elif 18<= BMI <25:
-                text= "Normal weight"  #169
-            elif 25<= BMI <30:
-                text= "Overweight"#216
-            elif 30<= BMI:
-                text= "Obese" #162
-            elif BMI <= 0:
-                text="entered the wrong number."
-            calculated_BMI_label = Label(text=f"Your BMI is {BMI} you are {text}",font=font_3)
-            calculated_BMI_label.config(pady=10)
-            calculated_BMI_label.pack()
-            break
+            if weight == "" or Heigh == "":
+                empty_label = Label(text="Please enter your height and weight",font=font_3)
+                empty_label.pack()
+            else:
+                BMI = weight / ((Heigh/100)*(Heigh/100))
+                BMI = int(BMI * 100) / 100
+                if 0< BMI < 18.5:
+                    text= "Underweight" #230
+                    He=230
+                elif 18<= BMI <25:
+                    text= "Normal weight"  #169
+                elif 25<= BMI <30:
+                    text= "Overweight"#216
+                elif 30<= BMI:
+                    text= "Obese" #162
+                elif BMI <= 0:
+                    text="entered the wrong number."
+                calculated_BMI_label = Label(text=f"Your BMI is {BMI} you are {text}",font=font_3)
+                calculated_BMI_label.config(pady=10)
+                calculated_BMI_label.pack()
+                break
         except ValueError:
             calculated_ValueError = Label(text="please enter a correct value!!..",font=font_3)
             calculated_ValueError.config(pady=10)
             calculated_ValueError.pack()
+
+
+
 
 
 calculate_button = Button(text="Calculate",command=click_button)
