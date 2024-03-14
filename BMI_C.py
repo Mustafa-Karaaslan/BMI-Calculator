@@ -56,7 +56,4 @@ def how_much_pixel():
     y = calculate_button.winfo_width()
     print(y)
 
-
-
-
 window.mainloop()
